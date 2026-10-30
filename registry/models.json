@@ -16,7 +16,8 @@
     "mistral",
     "inkling",
     "ornith",
-    "lfm"
+    "lfm",
+    "gpt-oss"
   ],
   "max_age_days": 240,
   "models": {
@@ -743,6 +744,17 @@
       "good_for": "Local agents, chat, reasoning, tool calls and images on one 32 GB GPU",
       "logo": "hf",
       "hf": "nvidia/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-24GB-GGUF"
+    },
+    "gpt-oss-120b": {
+      "family": "gpt-oss",
+      "name": "gpt-oss-120b",
+      "released": "2025-08-04",
+      "reasoning": true,
+      "vision": false,
+      "about": "OpenAI's open-weight mixture-of-experts (117B total, about 5.1B active, 128 experts) with MXFP4 experts. It reasons at a chosen effort and calls tools.",
+      "good_for": "Reasoning and tool calls on one 96 GB card",
+      "logo": "hf",
+      "hf": "openai/gpt-oss-120b"
     }
   },
   "builds": {
@@ -1188,6 +1200,10 @@
     "deepseek-ai/DeepSeek-V4.1-Flash-1017@1bae0e1088993b9b82de08f59de5be5a34e42170": {
       "format": "safetensors · FP8 / MXFP4 experts",
       "size_gb": 510.311
+    },
+    "openai/gpt-oss-120b@b5c939de8f754692c1647ca79fbf85e8c1e70f8a": {
+      "format": "safetensors · MXFP4 experts",
+      "size_gb": 65.25
     }
   }
 }

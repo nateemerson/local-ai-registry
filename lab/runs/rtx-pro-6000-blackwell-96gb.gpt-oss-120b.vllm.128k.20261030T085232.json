@@ -1,0 +1,73 @@
+{
+ "recipe": {
+  "model": "gpt-oss-120b",
+  "weights": "openai/gpt-oss-120b@b5c939de8f754692c1647ca79fbf85e8c1e70f8a",
+  "engine": "vllm@8a69ffad015f",
+  "set": {
+   "ctx": 131072,
+   "tools": "openai",
+   "think": "openai_gptoss"
+  },
+  "card": "rtx-pro-6000-blackwell-96gb"
+ },
+ "where": {
+  "on": "owner",
+  "gpu": "RTX PRO 6000 Blackwell WS (450 W cap)"
+ },
+ "passed": true,
+ "proof": {
+  "at": "2026-10-30",
+  "on": "owner",
+  "gpu": "RTX PRO 6000 Blackwell WS (450 W cap)",
+  "launch_sha256": "cbc73dcbd5c57a469355169a5e194cc62b4f7666a833b8ccc1be4867be3da2b9",
+  "gates": "load chat reasoning tools context speed",
+  "tps": 204.5,
+  "prefill": 10034,
+  "served": "gpt-oss-120b-b5c939de"
+ },
+ "evidence": {
+  "ok": {
+   "load": true,
+   "chat": true,
+   "reasoning": true,
+   "tools": true,
+   "context": true,
+   "speed": true
+  },
+  "chat": {
+   "content": "Red, Blue, Yellow",
+   "finish": "stop"
+  },
+  "reasoning": {
+   "thinking_chars": 99,
+   "content": "391"
+  },
+  "tools": {
+   "call": [
+    {
+     "id": "chatcmpl-tool-a7d5580918618d3d",
+     "type": "function",
+     "function": {
+      "name": "get_weather",
+      "arguments": "{\"city\": \"Paris\"}"
+     }
+    }
+   ],
+   "reply": "The current weather in Paris is **17 °C** with an **overcast** sky.",
+   "finish": "stop",
+   "calls_again": 0,
+   "thinking_chars": 54
+  },
+  "context": {
+   "prompt_tokens": 87296,
+   "seconds": 8.7,
+   "content": "58213"
+  },
+  "speed": {
+   "window_s": 30,
+   "tokens_total": 1330,
+   "seconds_total": 6.5
+  }
+ },
+ "launch_config_sha256": null
+}
